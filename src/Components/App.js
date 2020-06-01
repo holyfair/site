@@ -5,6 +5,7 @@ import History from './History'
 import Main from './Main'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import Footer from './Footer'
 
 const App =()=>(
   <div>
@@ -15,6 +16,7 @@ const App =()=>(
       <Route path='/signIn' component={SignIn}/>
       <Route path='/signUp' component={SignUp}/>
     </Switch>
+    <Footer/>
   </div>
 )
 
