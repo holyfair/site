@@ -4,7 +4,7 @@ import './css/SignIn.css'
 
 const SignUp = () => {
     return (
-        <div class='main-div'>
+        <div class='signIn-main-div'>
             <div>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
