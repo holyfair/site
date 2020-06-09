@@ -3,4 +3,3 @@ go to the project folder and enter the following commands:</br>
 npm i</br>
 npm start</br>
 After these commands, the project will start in your browser.</br>
-Тестуєм трелло і слак інтеграцію
