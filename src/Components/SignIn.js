@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import './css/SignIn.css'
 import JwtAuth from '../Services/JwtAuth'
-import { Link, Redirect } from 'react-router-dom'
-import { Navbar, Nav, NavLink } from 'react-bootstrap'
-import './css/Header.css'
+import Header from './Header'
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -46,17 +44,9 @@ export default class SignIn extends Component {
         
     }
     render() {
-        const { loading } = this.state.loading;
         return (
             <div>
-                <Navbar bg="dark" variant="dark" sticky="top" expand='lg'>
-                    <Navbar.Brand href="#home">VakSight</Navbar.Brand>
-                    <Nav className="ml-auto">
-                        <NavLink><Link to='/'>Оформлення</Link></NavLink>
-                        <NavLink><Link to='/signIn' >Вхід</Link></NavLink>
-                        <NavLink><Link to='/signUp' >Реєстрація</Link></NavLink>
-                    </Nav>
-                </Navbar>
+                <Header/>
                 <div class='signIn-main-div'>
                     <Form>
                     <h1>Вхід</h1>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import Header from './Header'
 import History from './History'
 import Main from './Main'
 import SignIn from './SignIn'

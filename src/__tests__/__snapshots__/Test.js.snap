@@ -1,0 +1,530 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthMain snapshot test 1`] = `
+<div>
+  <div
+    className="main-div"
+  >
+    <div
+      className="flex-column nav nav-pills nav-fill"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link active"
+          data-rb-event-key="link-1"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Книга
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-2"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Електронне джерело
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-3"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Частина книги
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-4"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Дисертація
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-5"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Автореферат дисертації
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-6"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Періодичне видання
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Footer snapshot test 1`] = `
+<nav
+  className="navbar navbar-expand navbar-dark bg-dark fixed-bottom"
+>
+  <span
+    className="navbar-brand"
+  >
+    Розроблено студентами
+  </span>
+  <button
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="justify-content-end navbar-collapse collapse"
+  >
+    <span
+      className="navbar-text"
+    >
+      Допоможіть: 5168 7573 3228 5974
+    </span>
+  </div>
+</nav>
+`;
+
+exports[`History snapshot test 1`] = `
+<div>
+  <div
+    className="history-main"
+  >
+    <ul>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Матяш І. Б. Діяльність Надзвичайної дипломатичної місії УНР в Угорщині : історія, спогади, арх. док. / І. Матяш, Ю. Мушка. – К. : Києво-Могилян. акад., 2005. – 397, [1] с. – (Бібліотека наукового щорічника "Україна дипломатична" ; вип. 1).
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Ромовська З. В. Сімейне законодавство України / З. В. Ромовська, Ю. В. Черняк. – К. : Прецедент, 2006. – 93 с. – (Юридична бібліотека. Бібліотека адвоката) (Матеріали до складання кваліфікаційних іспитів для отримання Свідоцтва про право на заняття адвокатською діяльністю ; вип. 11).
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Історія Свято-Михайлівського Золотоверхого монастиря / [авт. тексту В. Клос]. – К. : Грані-Т, 2007. – 119 с. – (Грані світу).
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Воскресіння мертвих : українська барокова драма : антологія / [упорядкув., ст., пер. і прим. В. О. Шевчук]. – К. : Грамота, 2007. – 638, [1] с.
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Розподіл населення найбільш численних національностей за статтю та віком, шлюбним станом, мовними ознаками та рівнем освіти [Електронний ресурс] : за даними Всеукр. перепису населення 2001 р. / Держ. ком. статистики України ; ред. О. Г. Осауленко. – К. : CD-вид-во "Інфодиск", 2004. – 1 електрон. опт. диск (CD-ROM) : кольор. ; 12 см. – (Всеукр. перепис населення, 2001). – Систем. вимоги: Pentium-266 ; 32 Mb RAM ; CD-ROM Windows 98/2000/NT/XP. – Назва з титул. екрану.
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Матяш І. Б. Діяльність Надзвичайної дипломатичної місії УНР в Угорщині : історія, спогади, арх. док. / І. Матяш, Ю. Мушка. – К. : Києво-Могилян. акад., 2005. – 397, [1] с. – (Бібліотека наукового щорічника "Україна дипломатична" ; вип. 1).
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Ромовська З. В. Сімейне законодавство України / З. В. Ромовська, Ю. В. Черняк. – К. : Прецедент, 2006. – 93 с. – (Юридична бібліотека. Бібліотека адвоката) (Матеріали до складання кваліфікаційних іспитів для отримання Свідоцтва про право на заняття адвокатською діяльністю ; вип. 11).
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Історія Свято-Михайлівського Золотоверхого монастиря / [авт. тексту В. Клос]. – К. : Грані-Т, 2007. – 119 с. – (Грані світу).
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Воскресіння мертвих : українська барокова драма : антологія / [упорядкув., ст., пер. і прим. В. О. Шевчук]. – К. : Грамота, 2007. – 638, [1] с.
+          </div>
+        </div>
+      </div>
+      <div
+        className="history-div"
+      >
+        <div
+          className="card bg-light"
+        >
+          <div
+            className="card-body"
+          >
+            Розподіл населення найбільш численних національностей за статтю та віком, шлюбним станом, мовними ознаками та рівнем освіти [Електронний ресурс] : за даними Всеукр. перепису населення 2001 р. / Держ. ком. статистики України ; ред. О. Г. Осауленко. – К. : CD-вид-во "Інфодиск", 2004. – 1 електрон. опт. диск (CD-ROM) : кольор. ; 12 см. – (Всеукр. перепис населення, 2001). – Систем. вимоги: Pentium-266 ; 32 Mb RAM ; CD-ROM Windows 98/2000/NT/XP. – Назва з титул. екрану.
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Main snapshot test 1`] = `
+<div>
+  <div
+    className="main-div"
+  >
+    <div
+      className="flex-column nav nav-pills nav-fill"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link active"
+          data-rb-event-key="link-1"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Книга
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-2"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Електронне джерело
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-3"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Частина книги
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-4"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Дисертація
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-5"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Автореферат дисертації
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="link-6"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Періодичне видання
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SignIn snapshot test 1`] = `
+<div>
+  <div
+    class="signIn-main-div"
+  >
+    <form
+      className=""
+    >
+      <h1>
+        Вхід
+      </h1>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicEmail"
+        >
+          Електронна пошта
+        </label>
+        <input
+          className="form-control"
+          id="formBasicEmail"
+          onChange={[Function]}
+          placeholder="Введіть email"
+          type="email"
+          value=""
+        />
+        <small
+          className="text-muted form-text"
+        >
+          Ми нікому не передаємо Ваші дані.
+        </small>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicPassword"
+        >
+          Пароль
+        </label>
+        <input
+          className="form-control"
+          id="formBasicPassword"
+          onChange={[Function]}
+          placeholder="Введіть пароль"
+          type="password"
+          value=""
+        />
+        <small
+          className="text-muted form-text"
+        >
+          Якщо Ви не зареєстровані натисність 
+          <a
+            href="/signUp"
+            style={
+              Object {
+                "color": "blue",
+              }
+            }
+          >
+            ТУТ
+          </a>
+        </small>
+      </div>
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        Підтвердити
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`SignUp snapshot test 1`] = `
+<div>
+  <div
+    class="signIn-main-div"
+  >
+    <form
+      className=""
+    >
+      <h1>
+        Реєстрація
+      </h1>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicEmail"
+        >
+          Електронна пошта
+        </label>
+        <input
+          className="form-control"
+          id="formBasicEmail"
+          onChange={[Function]}
+          placeholder="Введіть email"
+          type="email"
+          value=""
+        />
+        <small
+          className="text-muted form-text"
+        >
+          Ми нікому не передаємо Ваші дані.
+        </small>
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          htmlFor="formBasicPassword"
+        >
+          Пароль
+        </label>
+        <input
+          className="form-control"
+          id="formBasicPassword"
+          onChange={[Function]}
+          placeholder="Введіть пароль"
+          type="password"
+          value=""
+        />
+        <small
+          className="text-muted form-text"
+        >
+          Якщо Ви вже зареєстровані натисність 
+          <a
+            href="/signIn"
+            style={
+              Object {
+                "color": "blue",
+              }
+            }
+          >
+            ТУТ
+          </a>
+        </small>
+      </div>
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="submit"
+      >
+        Підтвердити
+      </button>
+    </form>
+  </div>
+</div>
+`;

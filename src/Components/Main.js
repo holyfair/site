@@ -1,19 +1,12 @@
 import React from 'react'
 import './css/Main.css'
-import { Link } from 'react-router-dom'
-import { Navbar, Nav, NavLink } from 'react-bootstrap'
-import './css/Header.css'
+import {Nav} from 'react-bootstrap'
+import Header from './Header'
+
 
 const Main = () => (
     <div>
-        <Navbar bg="dark" variant="dark" sticky="top" expand='lg'>
-            <Navbar.Brand href="#home">VakSight</Navbar.Brand>
-            <Nav className="ml-auto">
-                <NavLink><Link to='/'>Оформлення</Link></NavLink>
-                <NavLink><Link to='/signIn' >Вхід</Link></NavLink>
-                <NavLink><Link to='/signUp' >Реєстрація</Link></NavLink>
-            </Nav>
-        </Navbar>
+      <Header/>
         <div className='main-div'>
             <Nav defaultActiveKey="link-1" className='flex-column' variant='pills' fill>
                 <Nav.Item>

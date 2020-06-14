@@ -9,7 +9,6 @@ const Header = () => {
     <Navbar.Brand href="#home">VakSight</Navbar.Brand>
     <Nav className="ml-auto">
       <NavLink><Link to='/'>Оформлення</Link></NavLink>
-      <NavLink><Link to='/history'>Історія</Link></NavLink>
       <NavLink><Link to='/signIn' >Вхід</Link></NavLink>
       <NavLink><Link to='/signUp' >Реєстрація</Link></NavLink>
     </Nav>
