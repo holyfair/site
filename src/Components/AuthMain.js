@@ -11,7 +11,7 @@ const Main = () => (
             <Nav className="ml-auto">
                 <NavLink><Link to='/authMain'>Оформлення</Link></NavLink>
                 <NavLink><Link to='/history'>Історія</Link></NavLink>
-                <NavLink><Link to='/main'>Вихід</Link></NavLink>
+                <NavLink><Link to='/'>Вихід</Link></NavLink>
             </Nav>
         </Navbar>
         <div className='main-div'>

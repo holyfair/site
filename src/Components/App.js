@@ -11,7 +11,7 @@ import AuthMain from './AuthMain'
 const App =()=>(
   <div>
     <Switch>
-      <Route exact path='/main' component={Main}/>
+      <Route exact path='/' component={Main}/>
       <Route path='/history' component={History}/>
       <Route path='/authMain' component={AuthMain}/>
       <Route path='/signIn' component={SignIn}/>

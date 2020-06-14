@@ -1,10 +1,10 @@
 import axios from "axios"
 
-const API_URL = "https://localhost:5001";
+const API_URL = "https://vaksight-api.azurewebsites.net";
 
 class JwtAuth {
     signIn(userData) {
-        axios.post(API_URL + "/token", userData).then((res) => {
+        axios.post(API_URL + "/token", userData).then(res => {
             console.log(res.data)
             if (res.data) {
                 localStorage.setItem('user', JSON.stringify(res.data));
@@ -12,6 +12,7 @@ class JwtAuth {
             return res.data;
         }).catch((error) => {
             alert(error);
+            window.location.reload();
         });
     }
     logout() {
@@ -21,6 +22,7 @@ class JwtAuth {
         axios.post(API_URL + "/api/Users", userData)
             .catch((error) => {
                 alert(error);
+                window.location.reload();
             });
     }
 }

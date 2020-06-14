@@ -15,7 +15,8 @@ export default class SignUp extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            loading: false
         };
     }
     getEmail(e) {
@@ -30,15 +31,22 @@ export default class SignUp extends Component {
     }
     sendRequest(e) {
         e.preventDefault();
+        this.setState({
+            loading: true
+        });
         const userData = {
             "email": this.state.email,
             "password": this.state.password
         };
         JwtAuth.signUp(userData);
-        this.setState({ "email": '', "password": '' })
+        setTimeout(() => {
+            this.setState({ loading: false });
+            this.props.history.push('/signIn')
+          }, 5000);
     }
 
     render() {
+        const { loading } = this.state.loading;
         return (
             <div >
                 <Navbar bg="dark" variant="dark" sticky="top" expand='lg'>
@@ -51,6 +59,7 @@ export default class SignUp extends Component {
                 </Navbar>
                 <div class='signIn-main-div'>
                     <Form>
+                    <h1>Реєстрація</h1>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Електронна пошта</Form.Label>
                             <Form.Control type="email" placeholder="Введіть email" value={this.state.email} onChange={this.getEmail} />
@@ -66,8 +75,8 @@ export default class SignUp extends Component {
                                 Якщо Ви вже зареєстровані натисність <a href='/signIn' style={{ color: 'blue' }}>ТУТ</a>
                             </Form.Text>
                         </Form.Group>
-                        <Button variant="primary" type="submit" onClick={this.sendRequest}>
-                            Підтвердити
+                        <Button variant="primary" type="submit" disabled={this.state.loading} onClick={!this.state.loading ? this.sendRequest : null}>
+                        {this.state.loading ? 'Реєструємо...' : 'Підтвердити'}
                     </Button>
                     </Form>
                 </div>
