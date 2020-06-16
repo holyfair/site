@@ -5,7 +5,7 @@ import './css/Header.css'
 
 const Header = () => {
   return (
-    <Navbar bg="dark" variant="dark" sticky="top" expand='lg'>
+    <Navbar bg="dark" variant="dark" sticky="top">
     <Navbar.Brand href="#home">VakSight</Navbar.Brand>
     <Nav className="ml-auto">
       <NavLink><Link to='/'>Оформлення</Link></NavLink>

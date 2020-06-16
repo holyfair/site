@@ -1,8 +1,7 @@
 .main-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 20%;
-    height: 90%;
     padding: 5px;
+}
+.noMargin{
+    margin-left: 0;
+    margin-right: 0;
 }
