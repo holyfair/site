@@ -26,4 +26,4 @@ class JwtAuth {
             });
     }
 }
-export default JwtAuth;
+export default new JwtAuth;
