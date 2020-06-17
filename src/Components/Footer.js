@@ -3,7 +3,8 @@ import { Navbar } from 'react-bootstrap'
 
 const Footer = () => {
     return (
-        <Navbar fixed="bottom" bg="dark" variant="dark">
+        <footer>
+        <Navbar fixed='bottom' bg="dark" variant="dark">
             <Navbar.Brand>Розроблено студентами</Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
@@ -12,6 +13,7 @@ const Footer = () => {
                 </Navbar.Text>
             </Navbar.Collapse>
         </Navbar>
+        </footer>
     );
 };
 export default Footer;

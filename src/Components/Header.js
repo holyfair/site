@@ -5,6 +5,7 @@ import './css/Header.css'
 
 const Header = () => {
   return (
+    <header>
     <Navbar bg="dark" variant="dark" sticky="top">
     <Navbar.Brand href="#home">VakSight</Navbar.Brand>
     <Nav className="ml-auto">
@@ -13,6 +14,7 @@ const Header = () => {
       <NavLink><Link to='/signUp' >Реєстрація</Link></NavLink>
     </Nav>
   </Navbar>
+  </header>
   );
 }
 export default Header;

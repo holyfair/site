@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import './css/SignIn.css'
-import JwtAuth from '../Services/JwtAuth'
+import Server from '../Services/Server'
 import Header from './Header'
 
 export default class SignUp extends Component {
@@ -36,7 +36,7 @@ export default class SignUp extends Component {
             "email": this.state.email,
             "password": this.state.password
         };
-        JwtAuth.signUp(userData);
+        Server.signUp(userData);
         setTimeout(() => {
             this.setState({ loading: false });
             this.props.history.push('/signIn')

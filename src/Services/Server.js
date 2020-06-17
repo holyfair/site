@@ -2,7 +2,7 @@ import axios from "axios"
 
 const API_URL = "https://vaksight-api.azurewebsites.net";
 
-class JwtAuth {
+class Server {
     signIn(userData) {
         axios.post(API_URL + "/token", userData).then(res => {
             console.log(res.data)
@@ -25,5 +25,14 @@ class JwtAuth {
                 window.location.reload();
             });
     }
+    source(userData) {
+        return axios.post(API_URL + "/source/electronic", userData).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
 }
-export default new JwtAuth;
+export default new Server;
