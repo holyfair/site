@@ -29,18 +29,25 @@ export default class SignUp extends Component {
     }
     sendRequest(e) {
         e.preventDefault();
-        this.setState({
-            loading: true
-        });
-        const userData = {
-            "email": this.state.email,
-            "password": this.state.password
+        if (this.state.email !== '' && this.state.password.length >= 6) {
+            this.setState({
+                loading: true
+            });
+            const userData = {
+                "email": this.state.email,
+                "password": this.state.password
+            };
+            Server.signUp(userData).then(res => {
+                this.setState({ loading: false });
+                this.props.history.push('/signIn');
+            });
+        } else {
+            alert('Некоректні дані. Спробуйте ще раз');
+            this.setState({
+                email: '',
+                password: ''
+            });
         };
-        Server.signUp(userData);
-        setTimeout(() => {
-            this.setState({ loading: false });
-            this.props.history.push('/signIn')
-        }, 5000);
     }
 
     render() {
@@ -60,7 +67,7 @@ export default class SignUp extends Component {
 
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Пароль</Form.Label>
-                            <Form.Control type="password" placeholder="Введіть пароль" value={this.state.password} onChange={this.getPassword} />
+                            <Form.Control type="password" placeholder="Довжина від 6 символів" value={this.state.password} onChange={this.getPassword} />
                             <Form.Text className="text-muted">
                                 Якщо Ви вже зареєстровані натисність <a href='/signIn' style={{ color: 'blue' }}>ТУТ</a>
                             </Form.Text>

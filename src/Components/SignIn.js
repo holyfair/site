@@ -29,6 +29,7 @@ export default class SignIn extends Component {
     }
     sendRequest(e) {
         e.preventDefault();
+        if(this.state.email !=='' && this.state.password.length >=6 ){
         this.setState({
             loading: true
         });
@@ -36,11 +37,18 @@ export default class SignIn extends Component {
             "email": this.state.email,
             "password": this.state.password
         };
-        Server.signIn(userData);
-        setTimeout(() => {
+        Server.signIn(userData).then(res =>{
+            localStorage.setItem('email', this.state.email);
             this.setState({ loading: false });
-            this.props.history.push('/authMain')
-          }, 3000);
+            this.props.history.push('/authMain');
+        });
+    }else{
+        alert('Некоректні дані. Спробуйте ще раз');
+        this.setState({
+            email: '',
+            password:''
+        });
+    };
         
     }
     render() {
