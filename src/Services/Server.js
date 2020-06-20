@@ -25,8 +25,17 @@ class Server {
                 window.location.reload();
             });
     }
-    source(userData) {
+    electronicSource(userData) {
         return axios.post(API_URL + "/api/source/electronic", userData).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
+    bookSource(userData){
+        return axios.post(API_URL + "/api/source/book", userData).then(res => {
             if (res.status === 200) {
                 return (JSON.stringify(res.data));
             }
