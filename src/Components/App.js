@@ -16,7 +16,7 @@ const App =()=>(
       <Route path='/signIn' component={SignIn}/>
       <Route path='/signUp' component={SignUp}/>
     </Switch>
-    <Footer/>
+    {/* <Footer/> */}
   </div>
 )
 

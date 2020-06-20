@@ -26,7 +26,7 @@ class Server {
             });
     }
     source(userData) {
-        return axios.post(API_URL + "/source/electronic", userData).then(res => {
+        return axios.post(API_URL + "/api/source/electronic", userData).then(res => {
             if (res.status === 200) {
                 return (JSON.stringify(res.data));
             }
