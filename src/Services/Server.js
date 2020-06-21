@@ -60,6 +60,15 @@ class Server {
             alert(error);
         });
     }
+    abstractDissertationSource(userData){
+        return axios.post(API_URL + "/api/source/abstractDissertation", userData).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
     periodicalSource(userData){
         return axios.post(API_URL + "/api/source/periodical", userData).then(res => {
             if (res.status === 200) {
