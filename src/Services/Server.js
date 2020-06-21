@@ -60,6 +60,15 @@ class Server {
             alert(error);
         });
     }
+    periodicalSource(userData){
+        return axios.post(API_URL + "/api/source/periodical", userData).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
     getHistory(token, email){
        let config ={
         headers: {'Authorization': 'Bearer ' + (token).replace(/["]/g,'')},

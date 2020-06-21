@@ -38,10 +38,11 @@ export default class SignIn extends Component {
                 "password": this.state.password
             };
             Server.signIn(userData).then(res => {
-                localStorage.setItem('email', this.state.email);
                 this.setState({ loading: false });
-                if(res.status===200){
-                this.props.history.push('/authMain');}
+                if (res.status === 200) {
+                    localStorage.setItem('email', this.state.email);
+                    this.props.history.push('/authMain');
+                }
             }).catch((e) => {
                 this.setState({
                     email: '',
