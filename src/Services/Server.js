@@ -51,8 +51,26 @@ class Server {
             alert(error);
         });
     }
+    bookSourceWithHistory(userData, email){
+        return axios.post(API_URL + "/api/source/book", userData, {params:{email}}).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
     dissertationSource(userData){
         return axios.post(API_URL + "/api/source/dissertation", userData).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
+    dissertationSourceWithHistory(userData, email){
+        return axios.post(API_URL + "/api/source/dissertation", userData, {params:{email}}).then(res => {
             if (res.status === 200) {
                 return (JSON.stringify(res.data));
             }
@@ -69,8 +87,26 @@ class Server {
             alert(error);
         });
     }
+    abstractDissertationSourceWithHistory(userData, email){
+        return axios.post(API_URL + "/api/source/abstractDissertation", userData, {params:{email}}).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
     periodicalSource(userData){
         return axios.post(API_URL + "/api/source/periodical", userData).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
+    periodicalSourceWithHistory(userData,email){
+        return axios.post(API_URL + "/api/source/periodical", userData, {params:{email}}).then(res => {
             if (res.status === 200) {
                 return (JSON.stringify(res.data));
             }

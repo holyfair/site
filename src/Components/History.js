@@ -30,8 +30,8 @@ export default class History extends Component {
                             <Card.Body>{item.content}</Card.Body>
                         </Card>
                     )
-                    : 'Загрузка...'
-            }</div>;
+                    : 'Відправляємо голуба. Зачекайте...'
+            }</div>
         </div>);
     }
 }

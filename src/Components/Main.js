@@ -2282,7 +2282,6 @@ export default class Main extends Component {
                                             <FormControl
                                                 aria-label="Default"
                                                 aria-describedby="inputGroup-sizing-default"
-                                                placeholder='Число'
                                                 value={this.state.specialtyName}
                                                 onChange={this.getSpecialtyName}
                                             />
