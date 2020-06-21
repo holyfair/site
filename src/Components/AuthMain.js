@@ -199,9 +199,9 @@ export default class AuthMain extends Component {
                 'workName': this.state.jobName,
                 'yearOfPublication': this.state.yearOfPublication,
                 'linkToSource': this.state.linkToSource,
-                'publication': this.state.publication
+                'publication': this.state.publication,
             };
-            Server.electronicSource(ElectronicSource0).then(res => {
+            Server.electronicSourceWithHistory(ElectronicSource0, localStorage.getItem('email')).then(res => {
                 this.setState({
                     jobName: '',
                     yearOfPublication: '',
@@ -233,7 +233,7 @@ export default class AuthMain extends Component {
                     'fathersName': this.state.surname1
                 }]
             };
-            Server.electronicSource(ElectronicSource1).then(res => {
+            Server.electronicSourceWithHistory(ElectronicSource1, localStorage.getItem('email')).then(res => {
                 this.setState({
                     jobName: '',
                     yearOfPublication: '',
@@ -274,7 +274,7 @@ export default class AuthMain extends Component {
                 }
                 ]
             };
-            Server.electronicSource(ElectronicSource2).then(res => {
+            Server.electronicSourceWithHistory(ElectronicSource2, localStorage.getItem('email')).then(res => {
                 this.setState({
                     jobName: '',
                     yearOfPublication: '',
@@ -323,7 +323,7 @@ export default class AuthMain extends Component {
                 }
                 ]
             };
-            Server.electronicSource(ElectronicSource3).then(res => {
+            Server.electronicSourceWithHistory(ElectronicSource3, localStorage.getItem('email')).then(res => {
                 this.setState({
                     jobName: '',
                     yearOfPublication: '',
@@ -380,7 +380,7 @@ export default class AuthMain extends Component {
                 }
                 ]
             };
-            Server.electronicSource(ElectronicSource4).then(res => {
+            Server.electronicSourceWithHistory(ElectronicSource4, localStorage.getItem('email')).then(res => {
                 this.setState({
                     jobName: '',
                     yearOfPublication: '',
@@ -692,8 +692,7 @@ export default class AuthMain extends Component {
     };
     sendToken(e){
         e.preventDefault();
-        alert(localStorage);
-        console.log(localStorage);
+        Server.getHistory(localStorage.getItem('user'), localStorage.getItem('email'));
     };
     render() {
         return (

@@ -5,13 +5,12 @@ const API_URL = "https://vaksight-api.azurewebsites.net";
 class Server {
     signIn(userData) {
         return axios.post(API_URL + "/token", userData).then(res => {
-            console.log(res.config.data)
             if (res.status === 200) {
                 localStorage.setItem('user', JSON.stringify(res.data));
+                return res;
             }
-            return res.data;
         }).catch((error) => {
-            alert(error);
+            alert('Некоректні дані. Спробуйте ще раз '+error);
         });
     }
     logout() {
@@ -27,6 +26,15 @@ class Server {
     }
     electronicSource(userData) {
         return axios.post(API_URL + "/api/source/electronic", userData).then(res => {
+            if (res.status === 200) {
+                return (JSON.stringify(res.data));
+            }
+        }).catch((error) => {
+            alert(error);
+        });
+    }
+    electronicSourceWithHistory(userData, email){
+        return axios.post(API_URL + "/api/source/electronic", userData, {params:{email}}).then(res => {
             if (res.status === 200) {
                 return (JSON.stringify(res.data));
             }
@@ -51,6 +59,20 @@ class Server {
         }).catch((error) => {
             alert(error);
         });
+    }
+    getHistory(token, email){
+       let config ={
+        headers: {'Authorization': 'Bearer ' + (token).replace(/["]/g,'')},
+        params: {
+            "limit": 10,
+            email
+        }
+       };
+       return axios.get(API_URL+"/api/source", config).then(res=>{
+           return res.data.items
+       }).catch((e)=>{
+           alert(e);
+       });
     }
 }
 export default new Server;

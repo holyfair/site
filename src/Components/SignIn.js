@@ -29,35 +29,42 @@ export default class SignIn extends Component {
     }
     sendRequest(e) {
         e.preventDefault();
-        if(this.state.email !=='' && this.state.password.length >=6 ){
-        this.setState({
-            loading: true
-        });
-        const userData = {
-            "email": this.state.email,
-            "password": this.state.password
+        if (this.state.email !== '' && this.state.password.length >= 6) {
+            this.setState({
+                loading: true
+            });
+            const userData = {
+                "email": this.state.email,
+                "password": this.state.password
+            };
+            Server.signIn(userData).then(res => {
+                localStorage.setItem('email', this.state.email);
+                this.setState({ loading: false });
+                if(res.status===200){
+                this.props.history.push('/authMain');}
+            }).catch((e) => {
+                this.setState({
+                    email: '',
+                    password: '',
+                    loading: false
+                });
+            });
+        } else {
+            alert('Некоректні дані. Спробуйте ще раз');
+            this.setState({
+                email: '',
+                password: ''
+            });
         };
-        Server.signIn(userData).then(res =>{
-            localStorage.setItem('email', this.state.email);
-            this.setState({ loading: false });
-            this.props.history.push('/authMain');
-        });
-    }else{
-        alert('Некоректні дані. Спробуйте ще раз');
-        this.setState({
-            email: '',
-            password:''
-        });
-    };
-        
+
     }
     render() {
         return (
             <div>
-                <Header/>
+                <Header />
                 <div class='signIn-main-div'>
                     <Form>
-                    <h1>Вхід</h1>
+                        <h1>Вхід</h1>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Електронна пошта</Form.Label>
                             <Form.Control type="email" placeholder="Введіть email" value={this.state.email} onChange={this.getEmail} />
