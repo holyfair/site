@@ -8,6 +8,12 @@ export default class Main extends Component {
     constructor(props) {
         super(props);
 
+        this.sendDissertationRequest0 = this.sendDissertationRequest0.bind(this);
+        this.sendDissertationRequest1 = this.sendDissertationRequest1.bind(this);
+        this.sendDissertationRequest2 = this.sendDissertationRequest2.bind(this);
+        this.sendDissertationRequest3 = this.sendDissertationRequest3.bind(this);
+        this.sendDissertationRequest4 = this.sendDissertationRequest4.bind(this);
+
         this.sendPeriodicalRequest0 = this.sendPeriodicalRequest0.bind(this);
         this.sendPeriodicalRequest1 = this.sendPeriodicalRequest1.bind(this);
         this.sendPeriodicalRequest2 = this.sendPeriodicalRequest2.bind(this);
@@ -38,6 +44,10 @@ export default class Main extends Component {
         this.getPeriodicSelectionNumber = this.getPeriodicSelectionNumber.bind(this);
         this.getPublicationNumberType = this.getPublicationNumberType.bind(this);
 
+        this.getScientificDegreeName = this.getScientificDegreeName.bind(this);
+        this.getScientificDegreeSpecialty = this.getScientificDegreeSpecialty.bind(this);
+        this.getSpecialtyCode = this.getSpecialtyCode.bind(this);
+
         this.getFirstName1 = this.getFirstName1.bind(this);
         this.getLastName1 = this.getLastName1.bind(this);
         this.getFathersName1 = this.getFathersName1.bind(this);
@@ -65,6 +75,9 @@ export default class Main extends Component {
             periodicSelectionNumber: '',
             publicationNumberType: '',
             placeOfPublication: '',
+            scientificDegreeName:'',
+            scientificDegreeSpecialty:'',
+            specialtyCode:'',
 
             data: '',
             loading: false,
@@ -82,6 +95,21 @@ export default class Main extends Component {
             lastName4: '',
             surname4: ''
         };
+    };
+    getScientificDegreeName(e){
+        this.setState({
+            scientificDegreeName: e.target.value
+        });
+    };
+    getScientificDegreeSpecialty(e){
+        this.setState({
+            scientificDegreeSpecialty: e.target.value
+        });
+    };
+    getSpecialtyCode(e){
+        this.setState({
+            specialtyCode: e.target.value
+        });
     };
     getFirstName1(e) {
         this.setState({
@@ -933,6 +961,271 @@ export default class Main extends Component {
             alert('Некоректні дані. Спробуйте ще раз');
         }
     };
+    sendDissertationRequest0(e) {
+        e.preventDefault();
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
+            !isNaN(this.state.periodicSelectionNumber) &&
+             !isNaN(this.state.specialtyCode)) {
+            this.setState({
+                loading: true
+            });
+            const DissertationSource0 = {
+                "scientificDegreeName": this.state.scientificDegreeName,
+                "scientificDegreeSpecialty": this.state.scientificDegreeSpecialty,
+                "specialtyCode": this.state.specialtyCode,
+                "placeOfPublication": this.state.placeOfPublication,
+                "yearOfPublication": this.state.yearOfPublication,
+                "numberOfPages": this.state.numberOfPages,
+                "workName": this.state.jobName
+            }
+            Server.dissertationSource(DissertationSource0).then(res => {
+                this.setState({
+                    data: res,
+                    loading: false,
+
+                    yearOfPublication: '',
+                    scientificDegreeName:'',
+                    scientificDegreeSpecialty:'',
+                    specialtyCode:'',
+                    placeOfPublication:'',
+                    numberOfPages:'',
+                    jobName: '',
+
+                    firstName1: '',
+                    lastName1: '',
+                    surname1: ''
+                });
+            });
+        } else {
+            alert('Некоректні дані. Спробуйте ще раз');
+        }
+    };
+    sendDissertationRequest1(e) {
+        e.preventDefault();
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
+            !isNaN(this.state.periodicSelectionNumber) &&
+            this.state.firstName1 !== ''&& !isNaN(this.state.specialtyCode)) {
+            this.setState({
+                loading: true
+            });
+            const DissertationSource1 = {
+                "scientificDegreeName": this.state.scientificDegreeName,
+                "scientificDegreeSpecialty": this.state.scientificDegreeSpecialty,
+                "specialtyCode": this.state.specialtyCode,
+                "placeOfPublication": this.state.placeOfPublication,
+                "yearOfPublication": this.state.yearOfPublication,
+                "numberOfPages": this.state.numberOfPages,
+                "workName": this.state.jobName,
+                'authors': [{
+                    'firstName': this.state.firstName1,
+                    'lastName': this.state.lastName1,
+                    'fathersName': this.state.surname1
+                }]
+            }
+            Server.dissertationSource(DissertationSource1).then(res => {
+                this.setState({
+                    data: res,
+                    loading: false,
+
+                    yearOfPublication: '',
+                    scientificDegreeName:'',
+                    scientificDegreeSpecialty:'',
+                    specialtyCode:'',
+                    placeOfPublication:'',
+                    numberOfPages:'',
+                    jobName: '',
+
+                    firstName1: '',
+                    lastName1: '',
+                    surname1: ''
+                });
+            });
+        } else {
+            alert('Некоректні дані. Спробуйте ще раз');
+        }
+    };
+    sendDissertationRequest2(e) {
+        e.preventDefault();
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
+            !isNaN(this.state.periodicSelectionNumber) &&
+            this.state.firstName1 !== ''&& !isNaN(this.state.specialtyCode) && this.state.firstName2 !== '') {
+            this.setState({
+                loading: true
+            });
+            const DissertationSource2 = {
+                "scientificDegreeName": this.state.scientificDegreeName,
+                "scientificDegreeSpecialty": this.state.scientificDegreeSpecialty,
+                "specialtyCode": this.state.specialtyCode,
+                "placeOfPublication": this.state.placeOfPublication,
+                "yearOfPublication": this.state.yearOfPublication,
+                "numberOfPages": this.state.numberOfPages,
+                "workName": this.state.jobName,
+                'authors': [{
+                    'firstName': this.state.firstName1,
+                    'lastName': this.state.lastName1,
+                    'fathersName': this.state.surname1
+                },
+                {
+                    'firstName': this.state.firstName2,
+                    'lastName': this.state.lastName2,
+                    'fathersName': this.state.surname2
+                }]
+            }
+            Server.dissertationSource(DissertationSource2).then(res => {
+                this.setState({
+                    data: res,
+                    loading: false,
+
+                    yearOfPublication: '',
+                    scientificDegreeName:'',
+                    scientificDegreeSpecialty:'',
+                    specialtyCode:'',
+                    placeOfPublication:'',
+                    numberOfPages:'',
+                    jobName: '',
+
+                    firstName1: '',
+                    lastName1: '',
+                    surname1: '',
+                    firstName2: '',
+                    lastName2: '',
+                    surname2: ''
+                });
+            });
+        } else {
+            alert('Некоректні дані. Спробуйте ще раз');
+        }
+    };
+    sendDissertationRequest3(e) {
+        e.preventDefault();
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
+            !isNaN(this.state.periodicSelectionNumber) &&
+            this.state.firstName1 !== ''&& !isNaN(this.state.specialtyCode) && this.state.firstName2 !== ''
+            && this.state.firstName3 !== '') {
+            this.setState({
+                loading: true
+            });
+            const DissertationSource3 = {
+                "scientificDegreeName": this.state.scientificDegreeName,
+                "scientificDegreeSpecialty": this.state.scientificDegreeSpecialty,
+                "specialtyCode": this.state.specialtyCode,
+                "placeOfPublication": this.state.placeOfPublication,
+                "yearOfPublication": this.state.yearOfPublication,
+                "numberOfPages": this.state.numberOfPages,
+                "workName": this.state.jobName,
+                'authors': [{
+                    'firstName': this.state.firstName1,
+                    'lastName': this.state.lastName1,
+                    'fathersName': this.state.surname1
+                },
+                {
+                    'firstName': this.state.firstName2,
+                    'lastName': this.state.lastName2,
+                    'fathersName': this.state.surname2
+                },
+                {
+                    'firstName': this.state.firstName3,
+                    'lastName': this.state.lastName3,
+                    'fathersName': this.state.surname3
+                }]
+            }
+            Server.dissertationSource(DissertationSource3).then(res => {
+                this.setState({
+                    data: res,
+                    loading: false,
+
+                    yearOfPublication: '',
+                    scientificDegreeName:'',
+                    scientificDegreeSpecialty:'',
+                    specialtyCode:'',
+                    placeOfPublication:'',
+                    numberOfPages:'',
+                    jobName: '',
+
+                    firstName1: '',
+                    lastName1: '',
+                    surname1: '',
+                    firstName2: '',
+                    lastName2: '',
+                    surname2: '',
+                    firstName3: '',
+                    lastName3: '',
+                    surname3: ''
+                });
+            });
+        } else {
+            alert('Некоректні дані. Спробуйте ще раз');
+        }
+    };
+    sendDissertationRequest4(e) {
+        e.preventDefault();
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
+            !isNaN(this.state.periodicSelectionNumber) &&
+            this.state.firstName1 !== ''&& !isNaN(this.state.specialtyCode) && this.state.firstName2 !== ''
+            && this.state.firstName3 !== '' && this.state.firstName4 !== '') {
+            this.setState({
+                loading: true
+            });
+            const DissertationSource4 = {
+                "scientificDegreeName": this.state.scientificDegreeName,
+                "scientificDegreeSpecialty": this.state.scientificDegreeSpecialty,
+                "specialtyCode": this.state.specialtyCode,
+                "placeOfPublication": this.state.placeOfPublication,
+                "yearOfPublication": this.state.yearOfPublication,
+                "numberOfPages": this.state.numberOfPages,
+                "workName": this.state.jobName,
+                'authors': [{
+                    'firstName': this.state.firstName1,
+                    'lastName': this.state.lastName1,
+                    'fathersName': this.state.surname1
+                },
+                {
+                    'firstName': this.state.firstName2,
+                    'lastName': this.state.lastName2,
+                    'fathersName': this.state.surname2
+                },
+                {
+                    'firstName': this.state.firstName3,
+                    'lastName': this.state.lastName3,
+                    'fathersName': this.state.surname3
+                },
+                {
+                    'firstName': this.state.firstName4,
+                    'lastName': this.state.lastName4,
+                    'fathersName': this.state.surname4
+                }]
+            }
+            Server.dissertationSource(DissertationSource4).then(res => {
+                this.setState({
+                    data: res,
+                    loading: false,
+
+                    yearOfPublication: '',
+                    scientificDegreeName:'',
+                    scientificDegreeSpecialty:'',
+                    specialtyCode:'',
+                    placeOfPublication:'',
+                    numberOfPages:'',
+                    jobName: '',
+
+                    firstName1: '',
+                    lastName1: '',
+                    surname1: '',
+                    firstName2: '',
+                    lastName2: '',
+                    surname2: '',
+                    firstName3: '',
+                    lastName3: '',
+                    surname3: '',
+                    firstName4: '',
+                    lastName4: '',
+                    surname4: ''
+                });
+            });
+        } else {
+            alert('Некоректні дані. Спробуйте ще раз');
+        }
+    };
     render() {
         return (
             <div>
@@ -1013,11 +1306,12 @@ export default class Main extends Component {
                                         </InputGroup>
                                         <InputGroup className="mb-3">
                                             <InputGroup.Prepend>
-                                                <InputGroup.Text id="inputGroup-sizing-default">Сторінки</InputGroup.Text>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Кількість сторінок</InputGroup.Text>
                                             </InputGroup.Prepend>
                                             <FormControl
                                                 aria-label="Default"
                                                 aria-describedby="inputGroup-sizing-default"
+                                                placeholder='Число'
                                                 value={this.state.numberOfPages}
                                                 onChange={this.getNumberOfPages}
                                             />
@@ -1065,7 +1359,7 @@ export default class Main extends Component {
                                             onChange={this.getPublicationNumberType}
                                             custom
                                         >
-                                            <option selected>Виберіть тип видання...</option>
+                                            <option selected>Обов'язково виберіть тип видання...</option>
                                             <option value="0">Том</option>
                                             <option value="1">Випуск</option>
                                             <option value="2">Книга</option>
@@ -1418,7 +1712,234 @@ export default class Main extends Component {
                                     <Tab.Pane eventKey="third">
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="fourth">
-                                        <h1>Дисертація</h1>
+                                    <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Назва роботи</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder="Обов'язкове поле"
+                                                value={this.state.jobName}
+                                                onChange={this.getJobName}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Наукова ступінь</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                value={this.state.scientificDegreeName}
+                                                onChange={this.getScientificDegreeName}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Спеціальність наукової ступені</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                value={this.state.scientificDegreeSpecialty}
+                                                onChange={this.getScientificDegreeSpecialty}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Шифр спеціальності</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder='Число'
+                                                value={this.state.specialtyCode}
+                                                onChange={this.getSpecialtyCode}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Рік видання</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder='Число'
+                                                value={this.state.yearOfPublication}
+                                                onChange={this.getYearOfPublication}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Місто видання</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                value={this.state.placeOfPublication}
+                                                onChange={this.getPlaceOfPublication}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Кількість сторінок</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder='Число'
+                                                value={this.state.numberOfPages}
+                                                onChange={this.getNumberOfPages}
+                                            />
+                                        </InputGroup>
+                                        <Tabs defaultActiveKey="one" variant="pills">
+                                            <Tab eventKey="none" title="Без автора">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' readOnly />
+                                                    <FormControl placeholder="Ім'я" readOnly />
+                                                    <FormControl placeholder='По батькові' readOnly />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendDissertationRequest0 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="one" title="1 автор">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendDissertationRequest1 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="two" title="2 автори">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendDissertationRequest2 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="three" title="3 автори">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName3} onChange={this.getLastName3} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName3} onChange={this.getFirstName3} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname3} onChange={this.getFathersName3} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendDissertationRequest3 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="four" title="4 автори">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName3} onChange={this.getLastName3} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName3} onChange={this.getFirstName3} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname3} onChange={this.getFathersName3} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName4} onChange={this.getLastName4} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName4} onChange={this.getFirstName4} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname4} onChange={this.getFathersName4} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendDissertationRequest4 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="five" title="Від 5 авторів">
+                                                <Form.Text className="text-muted author-tabs-div">
+                                                    Якщо документ має більше, ніж 4 автори, у списку літератури зазначаються лише перші 3 автори
+                                                </Form.Text>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName3} onChange={this.getLastName3} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName3} onChange={this.getFirstName3} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname3} onChange={this.getFathersName3} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendDissertationRequest3 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                        </Tabs>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="fifth">
                                         <h1>Автореферат дисертації</h1>
