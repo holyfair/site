@@ -25,7 +25,7 @@ export default class Main extends Component {
         this.sendPeriodicalRequest1 = this.sendPeriodicalRequest1.bind(this);
         this.sendPeriodicalRequest2 = this.sendPeriodicalRequest2.bind(this);
         this.sendPeriodicalRequest3 = this.sendPeriodicalRequest3.bind(this);
-        this.sendPeriodicalRequest4 = this.sendPeriodicalRequest3.bind(this);
+        this.sendPeriodicalRequest4 = this.sendPeriodicalRequest4.bind(this);
 
         this.sendElectronicRequest0 = this.sendElectronicRequest0.bind(this);
         this.sendElectronicRequest1 = this.sendElectronicRequest1.bind(this);
@@ -2011,28 +2011,54 @@ export default class Main extends Component {
                                                 onChange={this.getJobName}
                                             />
                                         </InputGroup>
-                                        <InputGroup className="mb-3">
-                                            <InputGroup.Prepend>
-                                                <InputGroup.Text id="inputGroup-sizing-default">Наукова ступінь</InputGroup.Text>
-                                            </InputGroup.Prepend>
-                                            <FormControl
-                                                aria-label="Default"
-                                                aria-describedby="inputGroup-sizing-default"
-                                                value={this.state.scientificDegreeName}
-                                                onChange={this.getScientificDegreeName}
-                                            />
-                                        </InputGroup>
-                                        <InputGroup className="mb-3">
-                                            <InputGroup.Prepend>
-                                                <InputGroup.Text id="inputGroup-sizing-default">Спеціальність наукової ступені</InputGroup.Text>
-                                            </InputGroup.Prepend>
-                                            <FormControl
-                                                aria-label="Default"
-                                                aria-describedby="inputGroup-sizing-default"
-                                                value={this.state.scientificDegreeSpecialty}
-                                                onChange={this.getScientificDegreeSpecialty}
-                                            />
-                                        </InputGroup>
+                                        <Form.Control
+                                            as="select"
+                                            className="select-div"
+                                            id="inlineFormCustomSelect"
+                                            value={this.state.scientificDegreeName}
+                                            onChange={this.getScientificDegreeName}
+                                            custom
+                                        >
+                                            <option selected>Виберіть наукову ступінь</option>
+                                            <option value="Кандидат">Кандидат</option>
+                                            <option value="Доктор">Доктор</option>
+                                        </Form.Control>
+                                        <Form.Control
+                                            as="select"
+                                            className="select-div"
+                                            id="inlineFormCustomSelect"
+                                            value={this.state.scientificDegreeSpecialty}
+                                            onChange={this.getScientificDegreeSpecialty}
+                                            custom
+                                        >
+                                            <option selected>Виберіть спеціальність наукової ступеніь</option>
+                                            <option value="архітектурних наук">архітектурних наук</option>
+                                            <option value="біологічних наук">біологічних наук</option>
+                                            <option value="ветеринарних наук">ветеринарних наук</option>
+                                            <option value="військових наук">військових наук</option>
+                                            <option value="географічних наук">географічних наук</option>
+                                            <option value="геолого-мінералогічних наук">геолого-мінералогічних наук</option>
+                                            <option value="економічних наук">економічних наук</option>
+                                            <option value="історичних  наук">історичних  наук</option>
+                                            <option value="культурології">культурології</option>
+                                            <option value="медичних наук">медичних наук</option>
+                                            <option value="мистецтвознавства">мистецтвознавства</option>
+                                            <option value="наук з державного управління">наук з державного управління</option>
+                                            <option value="педагогічних наук">педагогічних наук</option>
+                                            <option value="політичних наук">політичних наук</option>
+                                            <option value="психологічних наук">психологічних наук</option>
+                                            <option value="сільськогосподарських наук">сільськогосподарських наук</option>
+                                            <option value="наук з соціальних комунікацій">наук з соціальних комунікацій</option>
+                                            <option value="соціологічних наук">соціологічних наук</option>
+                                            <option value="технічних наук">технічних наук</option>
+                                            <option value="фармацевтичних наук">фармацевтичних наук</option>
+                                            <option value="фізико-математичних наук">фізико-математичних наук</option>
+                                            <option value="наук з фізичного виховання і спорту">наук з фізичного виховання і спорту</option>
+                                            <option value="філологічних наук">філологічних наук</option>
+                                            <option value="філософських наук">філософських наук</option>
+                                            <option value="хімічних наук">хімічних наук</option>
+                                            <option value="юридичних наук">юридичних наук</option>
+                                        </Form.Control>
                                         <InputGroup className="mb-3">
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text id="inputGroup-sizing-default">Шифр спеціальності</InputGroup.Text>
@@ -2241,28 +2267,54 @@ export default class Main extends Component {
                                                 onChange={this.getJobName}
                                             />
                                         </InputGroup>
-                                        <InputGroup className="mb-3">
-                                            <InputGroup.Prepend>
-                                                <InputGroup.Text id="inputGroup-sizing-default">Наукова ступінь</InputGroup.Text>
-                                            </InputGroup.Prepend>
-                                            <FormControl
-                                                aria-label="Default"
-                                                aria-describedby="inputGroup-sizing-default"
-                                                value={this.state.scientificDegreeName}
-                                                onChange={this.getScientificDegreeName}
-                                            />
-                                        </InputGroup>
-                                        <InputGroup className="mb-3">
-                                            <InputGroup.Prepend>
-                                                <InputGroup.Text id="inputGroup-sizing-default">Спеціальність наукової ступені</InputGroup.Text>
-                                            </InputGroup.Prepend>
-                                            <FormControl
-                                                aria-label="Default"
-                                                aria-describedby="inputGroup-sizing-default"
-                                                value={this.state.scientificDegreeSpecialty}
-                                                onChange={this.getScientificDegreeSpecialty}
-                                            />
-                                        </InputGroup>
+                                        <Form.Control
+                                            as="select"
+                                            className="select-div"
+                                            id="inlineFormCustomSelect"
+                                            value={this.state.scientificDegreeName}
+                                            onChange={this.getScientificDegreeName}
+                                            custom
+                                        >
+                                            <option selected>Виберіть наукову ступінь</option>
+                                            <option value="Кандидат">Кандидат</option>
+                                            <option value="Доктор">Доктор</option>
+                                        </Form.Control>
+                                        <Form.Control
+                                            as="select"
+                                            className="select-div"
+                                            id="inlineFormCustomSelect"
+                                            value={this.state.scientificDegreeSpecialty}
+                                            onChange={this.getScientificDegreeSpecialty}
+                                            custom
+                                        >
+                                            <option selected>Виберіть спеціальність наукової ступеніь</option>
+                                            <option value="архітектурних наук">архітектурних наук</option>
+                                            <option value="біологічних наук">біологічних наук</option>
+                                            <option value="ветеринарних наук">ветеринарних наук</option>
+                                            <option value="військових наук">військових наук</option>
+                                            <option value="географічних наук">географічних наук</option>
+                                            <option value="геолого-мінералогічних наук">геолого-мінералогічних наук</option>
+                                            <option value="економічних наук">економічних наук</option>
+                                            <option value="історичних  наук">історичних  наук</option>
+                                            <option value="культурології">культурології</option>
+                                            <option value="медичних наук">медичних наук</option>
+                                            <option value="мистецтвознавства">мистецтвознавства</option>
+                                            <option value="наук з державного управління">наук з державного управління</option>
+                                            <option value="педагогічних наук">педагогічних наук</option>
+                                            <option value="політичних наук">політичних наук</option>
+                                            <option value="психологічних наук">психологічних наук</option>
+                                            <option value="сільськогосподарських наук">сільськогосподарських наук</option>
+                                            <option value="наук з соціальних комунікацій">наук з соціальних комунікацій</option>
+                                            <option value="соціологічних наук">соціологічних наук</option>
+                                            <option value="технічних наук">технічних наук</option>
+                                            <option value="фармацевтичних наук">фармацевтичних наук</option>
+                                            <option value="фізико-математичних наук">фізико-математичних наук</option>
+                                            <option value="наук з фізичного виховання і спорту">наук з фізичного виховання і спорту</option>
+                                            <option value="філологічних наук">філологічних наук</option>
+                                            <option value="філософських наук">філософських наук</option>
+                                            <option value="хімічних наук">хімічних наук</option>
+                                            <option value="юридичних наук">юридичних наук</option>
+                                        </Form.Control>
                                         <InputGroup className="mb-3">
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text id="inputGroup-sizing-default">Шифр спеціальності</InputGroup.Text>
