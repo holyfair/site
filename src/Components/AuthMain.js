@@ -457,7 +457,7 @@ export default class Main extends Component {
     };
     sendBookRequest0(e) {
         e.preventDefault();
-        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) && !isNaN(this.state.numberOfPages) &&
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
             !isNaN(this.state.periodicSelectionNumber)) {
             this.setState({
                 loading: true
@@ -495,7 +495,7 @@ export default class Main extends Component {
     };
     sendBookRequest1(e) {
         e.preventDefault();
-        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) && !isNaN(this.state.numberOfPages) &&
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
             !isNaN(this.state.periodicSelectionNumber) &&
             this.state.firstName1 !== '') {
             this.setState({
@@ -543,7 +543,7 @@ export default class Main extends Component {
     };
     sendBookRequest2(e) {
         e.preventDefault();
-        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) && !isNaN(this.state.numberOfPages) &&
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
             !isNaN(this.state.periodicSelectionNumber) &&
             this.state.firstName1 !== '' && this.state.firstName2 !== '') {
             this.setState({
@@ -600,7 +600,7 @@ export default class Main extends Component {
     };
     sendBookRequest3(e) {
         e.preventDefault();
-        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) && !isNaN(this.state.numberOfPages) &&
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
             !isNaN(this.state.periodicSelectionNumber) &&
             this.state.firstName1 !== '' && this.state.firstName2 !== '' && this.state.firstName3 !== '') {
             this.setState({
@@ -665,7 +665,7 @@ export default class Main extends Component {
     };
     sendBookRequest4(e) {
         e.preventDefault();
-        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) && !isNaN(this.state.numberOfPages) &&
+        if (this.state.jobName !== '' && !isNaN(this.state.yearOfPublication) &&
             !isNaN(this.state.periodicSelectionNumber) &&
             this.state.firstName1 !== '' && this.state.firstName2 !== '' && this.state.firstName3 !== '' && this.state.firstName4 !== '') {
             this.setState({
@@ -1996,7 +1996,260 @@ export default class Main extends Component {
                                         </Tabs>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="third">
-                                        <h1>Все ще в розробці</h1>
+                                    <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Назва роботи</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder="Обов'язкове поле"
+                                                value={this.state.jobName}
+                                                onChange={this.getJobName}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Рік видання</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder='Число'
+                                                value={this.state.yearOfPublication}
+                                                onChange={this.getYearOfPublication}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Місто видання</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                value={this.state.placeOfPublication}
+                                                onChange={this.getPlaceOfPublication}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Видавництво</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                value={this.state.publication}
+                                                onChange={this.getPublication}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Сторінки</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder='14-28'
+                                                value={this.state.numberOfPages}
+                                                onChange={this.getNumberOfPages}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Видання</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder='Назва видання, яке опублікувало роботу'
+                                                value={this.state.publishingName}
+                                                onChange={this.getPublishingName}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Серія</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                value={this.state.series}
+                                                onChange={this.getSeries}
+                                            />
+                                        </InputGroup>
+                                        <InputGroup className="mb-3">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text id="inputGroup-sizing-default">Номер періодичного випуску</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                aria-label="Default"
+                                                aria-describedby="inputGroup-sizing-default"
+                                                placeholder='Число'
+                                                value={this.state.periodicSelectionNumber}
+                                                onChange={this.getPeriodicSelectionNumber}
+                                            />
+                                        </InputGroup>
+                                        <Form.Control
+                                            as="select"
+                                            className="select-div"
+                                            id="inlineFormCustomSelect"
+                                            value={this.state.publicationNumberType}
+                                            onChange={this.getPublicationNumberType}
+                                            custom
+                                        >
+                                            <option selected>Обов'язково виберіть тип видання...</option>
+                                            <option value="0">Том</option>
+                                            <option value="1">Випуск</option>
+                                            <option value="2">Книга</option>
+                                            <option value="3">№</option>
+                                        </Form.Control>
+                                        <Tabs defaultActiveKey="one" variant="pills">
+                                            <Tab eventKey="none" title="Без автора">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' readOnly />
+                                                    <FormControl placeholder="Ім'я" readOnly />
+                                                    <FormControl placeholder='По батькові' readOnly />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendBookRequest0 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="one" title="1 автор">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendBookRequest1 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="two" title="2 автори">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendBookRequest2 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="three" title="3 автори">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName3} onChange={this.getLastName3} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName3} onChange={this.getFirstName3} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname3} onChange={this.getFathersName3} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendBookRequest3 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="four" title="4 автори">
+                                                <InputGroup className="mb-3 author-tabs-div">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName3} onChange={this.getLastName3} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName3} onChange={this.getFirstName3} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname3} onChange={this.getFathersName3} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName4} onChange={this.getLastName4} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName4} onChange={this.getFirstName4} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname4} onChange={this.getFathersName4} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendBookRequest4 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                            <Tab eventKey="five" title="Від 5 авторів">
+                                                <Form.Text className="text-muted author-tabs-div">
+                                                    Якщо документ має більше, ніж 4 автори, у списку літератури зазначаються лише перші 3 автори
+                                                </Form.Text>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName1} onChange={this.getLastName1} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName1} onChange={this.getFirstName1} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname1} onChange={this.getFathersName1} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName2} onChange={this.getLastName2} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName2} onChange={this.getFirstName2} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname2} onChange={this.getFathersName2} />
+                                                </InputGroup>
+                                                <InputGroup className="mb-3">
+                                                    <InputGroup.Prepend>
+                                                        <InputGroup.Text>ПІБ автора</InputGroup.Text>
+                                                    </InputGroup.Prepend>
+                                                    <FormControl placeholder='Прізвище' value={this.state.lastName3} onChange={this.getLastName3} />
+                                                    <FormControl placeholder="Ім'я" value={this.state.firstName3} onChange={this.getFirstName3} />
+                                                    <FormControl placeholder='По батькові' value={this.state.surname3} onChange={this.getFathersName3} />
+                                                </InputGroup>
+                                                <Button variant="primary" size="lg" active block disabled={this.state.loading} onClick={!this.state.loading ? this.sendBookRequest3 : null}>
+                                                    {this.state.loading ? 'Оформлюємо...' : 'Оформити'}
+                                                </Button>
+                                            </Tab>
+                                        </Tabs>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="fourth">
                                     <InputGroup className="mb-3">
