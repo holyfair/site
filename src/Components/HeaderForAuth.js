@@ -16,7 +16,7 @@ export default class HeaderForAuth extends Component {
     render() {
         return (
             <div>
-                <Navbar bg="dark" variant="dark" sticky="top" expand='lg'>
+                <Navbar bg="dark" variant="dark" sticky="top">
                     <Navbar.Brand href="#home">VakSight</Navbar.Brand>
                     <Nav className="ml-auto">
                         <NavLink><Link to='/authMain'>Оформлення</Link></NavLink>

@@ -3,6 +3,7 @@ import './css/History.css'
 import { Card} from 'react-bootstrap'
 import HeaderForAuth from './HeaderForAuth'
 import Server from '../Services/Server'
+import './css/Main.css'
 
 export default class History extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class History extends Component {
                             <Card.Body>{item.content}</Card.Body>
                         </Card>
                     )
-                    : 'Відправляємо голуба. Зачекайте...'
+                    : <div className="load-div"><h1>Відправляємо голуба. Зачекайте...</h1></div>
             }</div>
         </div>);
     }

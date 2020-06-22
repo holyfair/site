@@ -18,3 +18,11 @@
 .select-div{
     margin-bottom: 9px;
 }
+.load-div{
+    text-align: center;
+}
+.info-div{
+    background: gainsboro;
+    text-align: center;
+    margin:3%;
+}

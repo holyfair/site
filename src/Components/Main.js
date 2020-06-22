@@ -2685,6 +2685,9 @@ export default class Main extends Component {
                 <Card className="card-div">
                     <Card.Body>{this.state.data}</Card.Body>
                 </Card>
+                <div className="info-div">
+                    <p>Щоб зберегти оформлення потрібно авторизуватись</p>
+                </div>
             </div>
         );
     }
