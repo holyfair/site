@@ -2283,7 +2283,7 @@ export default class Main extends Component {
                                             onChange={this.getScientificDegreeSpecialty}
                                             custom
                                         >
-                                            <option selected>Виберіть спеціальність наукової ступеніь</option>
+                                            <option selected>Виберіть спеціальність наукової ступені</option>
                                             <option value="архітектурних наук">архітектурних наук</option>
                                             <option value="біологічних наук">біологічних наук</option>
                                             <option value="ветеринарних наук">ветеринарних наук</option>
@@ -2539,7 +2539,7 @@ export default class Main extends Component {
                                             onChange={this.getScientificDegreeSpecialty}
                                             custom
                                         >
-                                            <option selected>Виберіть спеціальність наукової ступеніь</option>
+                                            <option selected>Виберіть спеціальність наукової ступені</option>
                                             <option value="архітектурних наук">архітектурних наук</option>
                                             <option value="біологічних наук">біологічних наук</option>
                                             <option value="ветеринарних наук">ветеринарних наук</option>
