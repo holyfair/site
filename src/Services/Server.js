@@ -2,7 +2,7 @@ import axios from "axios"
 
 const API_URL = "https://vaksight-api.azurewebsites.net";
 
-export default class Server {
+class Server {
     signIn(userData) {
         return axios.post(API_URL + "/token", userData).then(res => {
             if (res.status === 200) {
@@ -129,3 +129,5 @@ export default class Server {
        });
     }
 }
+
+export default new Server();
