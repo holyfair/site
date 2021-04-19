@@ -32,7 +32,6 @@ const Footer = () => {
     return (
         <div>
         <Footer1>
-          <span>Допоможіть: 5168 7573 3228 5974</span>
         </Footer1>
       </div>
     );
